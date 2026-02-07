@@ -26,4 +26,13 @@
  */
 export function calculateGrade(score, hasExtraCredit) {
   // Your code here
+  var totatScore = 0;
+  if(score<0 || score>100) return "INVALID"
+  if(hasExtraCredit){totatScore = score+5}
+  else{totatScore= score}
+  if(totatScore>=90)return "A"
+  else if(totatScore>=80&& totatScore<90)return "B"
+  else if(totatScore>=70&& totatScore<80)return "C"
+  else if(totatScore>=60&& totatScore<70)return "D"
+  else if(totatScore<60)return "F"
 }
