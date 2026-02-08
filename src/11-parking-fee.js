@@ -34,4 +34,22 @@
  */
 export function calculateParkingFee(hours, vehicleType) {
   // Your code here
+  var realHours = Math.round(hours)
+  var totalCost = 0
+  var maxCar = 30
+  var maxMoter = 18
+  var maxBus = 60
+  var calculations = (price, vehiType) =>{
+    totalCost = 5 + (price *(realHours-1))
+
+  }
+  if(hours<1) return -1
+  if(!(vehicleType == "car" ||vehicleType == "motorcycle" ||vehicleType == "bus") ) return -1
+  if(vehicleType ==="car" && realHours == 1){return 5}
+  if(vehicleType ==="car" && realHours >1){return 5+ (3*(realHours-1))}
+  if(vehicleType ==="motorcycle" && realHours == 1){return 3}
+  if(vehicleType ==="motorcycle" && realHours >1){return 5+ (2*(realHours-1))}
+  if(vehicleType ==="bus" && realHours == 1){return 10}
+  if(vehicleType ==="bus" && realHours >1){return 5+ (7*(realHours-1))}
+
 }
